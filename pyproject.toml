@@ -12,6 +12,9 @@ requests = "2.32.3"
 fastapi = "^0.111.0"
 pydantic = "^2.8.2"
 pyjwt = "^2.8.0"
+routes = "^2.5.1"
+uvicorn = "^0.30.1"
+biopython = "^1.84"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md

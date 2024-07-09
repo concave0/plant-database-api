@@ -1,13 +1,13 @@
 from fastapi import APIRouter , Depends , HTTPException , status , Query , Body , Path , UploadFile , File , Form , Request , Response , Security , BackgroundTasks
 from pydantic.types import Json
-from pydantic_core.core_schema import JsonSchema
 from starlette.responses import JSONResponse, RedirectResponse 
-from token.token_generate import TokenGenerate
+from token_gen.token_generate import TokenGenerate 
 
 
 router = APIRouter() 
 
 """ HEALTH CHECK ROUTES """
+
 @router.get("/") 
 def root(request:Request) -> JSONResponse: 
   return JSONResponse(content={"message":"I am up and running"})
