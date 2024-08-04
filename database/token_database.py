@@ -3,7 +3,6 @@ from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-
 from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -11,14 +10,12 @@ from pydantic import BaseModel
 
 from uuid import hash_obj
 
-
-
 Base = declarative_base()
 
 
+class PlantCareDatabase(BaseModel):
 
-class TokenDatabase(BaseModel): 
-  def __init__(self, database_url='sqlite:///token_database.db'):
+  def __init__(self, database_url='sqlite:///plant_care_database.db'):
     self.engine = create_engine(database_url)
     self.Session = sessionmaker(bind=self.engine)
 
@@ -40,10 +37,8 @@ class TokenDatabase(BaseModel):
       session.rollback()
       raise e
     finally:
-      session.close() 
+      session.close()
 
-def update_value(self, table_class, filters, updates):
-  session = self.Session() 
+  def update_value(self, table_class, filters, updates):
+    session = self.Session()
   
-
-
